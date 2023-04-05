@@ -24,7 +24,7 @@ const Header = ()=>{
                         <img width='40px' height='40px' src={menu} />
                     </div>
                     <ul className='nav-list'>
-                        <li><Link style={location.pathname==='/whatsapp-adm' ? {color:'#0315BB'} : (location.pathname==='/cityInstructions' ? {color:'#019d4d'} : {color:'#fff'})} to='/'>Inicio</Link></li>
+                        <li><Link style={location.pathname==='/whatsapp-adm' ? {color:'#0315BB'} : (location.pathname==='/cityInstructions' ? {color:'#019d4d'} : {color:'#fff'})} to='/whatsapp-adm'>Inicio</Link></li>
                         <li><Link style={location.pathname==='/whatsapp-adm' ? {color:'#0315BB'} : (location.pathname==='/cityInstructions' ? {color:'#019d4d'} : {color:'#fff'})} to='/'>Producto</Link></li>
                         <li><Link style={location.pathname==='/whatsapp-adm' ? {color:'#0315BB'} : (location.pathname==='/cityInstructions' ? {color:'#019d4d'} : {color:'#fff'})} to='/'>Nosotros</Link></li>
                         <li><Link style={location.pathname==='/whatsapp-adm' ? {color:'#0315BB'} : (location.pathname==='/cityInstructions' ? {color:'#019d4d'} : {color:'#fff'})} to='/'>Contacto</Link></li>
