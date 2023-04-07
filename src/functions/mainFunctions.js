@@ -203,7 +203,7 @@ export const sendDeptFirstMsg = async (from,to,token,cityMsg)=>{
 export const sendGreetingMsg = async (from,to,token)=>{
  const response = await axios({
     method:'post',
-    url:`https://graph.facebook.com/v16.0/${from}/messages?access_token=${token}`,
+    url:`https://graph.facebook.com/v16.0/${from}/messages?`,
     data:{
         messaging_product: "whatsapp",
             to: to,
@@ -216,6 +216,7 @@ Gracias por comunicarte con Finfitt Weight Loss Bolivia`
     },
     headers:{
         "Content-Type": "application/json"
+        ,"Authorization": `Bearer ${token}`
     }
  });
  console.log(response);
