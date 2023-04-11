@@ -134,33 +134,33 @@ Así mismo aumenta la termogénesis, contribuyendo para la pérdida de peso y vo
                         
 *Se Reduce 2 kilos por semana y entre 6 a 10 kilos al mes en promedio al mes.*
                         
-    ✅ Acelera el Metabolismo
-    ✅ Inhibe el apetito
-    ✅ Reduce la Ansiedad
-    ✅ Quema Grasa
-    ✅ Aporta Energía
-    ✅ Evita Asimilación de la grasa ingerida.
-    🚫 No tiene EFECTO REBOTE. 
-    🚫 No tiene ningún efecto secundario 
-    🚫 No son laxantes ni diuréticos como los demás productos. 
-    🚫 No es requisito hacer dieta ni ejercicios para ver resultados (los mismo pueden potenciar el tiempo del tratamiento.) 
+✅ Acelera el Metabolismo
+✅ Inhibe el apetito
+✅ Reduce la Ansiedad
+✅ Quema Grasa
+✅ Aporta Energía
+✅ Evita Asimilación de la grasa ingerida.
+🚫 No tiene EFECTO REBOTE. 
+🚫 No tiene ningún efecto secundario 
+🚫 No son laxantes ni diuréticos como los demás productos. 
+🚫 No es requisito hacer dieta ni ejercicios para ver resultados (los mismo pueden potenciar el tiempo del tratamiento). 
                         
 ❌ CONTRAINDICADO 
-    🔹Embarazo
-    🔹Período de lactancia❗
+🔹Embarazo
+🔹Período de lactancia
                         
-▪️*Hacemos seguimiento semanal online con endocrinólogos para garantizar resultados.*
+*Hacemos seguimiento semanal online con endocrinólogos para garantizar resultados.*
                         
 💲El costo del tratamiento para un mes le sale *340 Bs.*
-Cada paquete contiene 30 cápsulas. (El tiempo de tratamiento es depende de cuando debe bajar) 
+Cada paquete contiene 30 cápsulas. (El tiempo de tratamiento depende de cuanto debe bajar) 
                         
 ⚠️ PRODUCTO ORIGINAL ⚠️
 Somos los *únicos distribuidores autorizados en Bolivia* hace 9 años.
 Contamos con todos los registros correspondientes a la fecha incluidos agemed (regulador de medicamentos en Bolivia).
                         
-    🔸Entregas personales en La Paz. 
-    🔸Delivery en Santa Cruz y Cochabamba. 🏍️
-    🔸Se hacen envíos diarios a toda Bolivia. 📦🛫🚚
+🔸Entregas personales en La Paz. 
+🔸Delivery en Santa Cruz y Cochabamba. 🏍️
+🔸Se hacen envíos diarios a toda Bolivia. 📦🛫🚚
 `
             }
 
@@ -208,7 +208,8 @@ export const sendGreetingMsg = async (from,to,token)=>{
             type: "text",
             text: {
             preview_url: false,
-            body: `Buenas. Gracias por comunicarte con Distribuidora Finfitt Weight Loss Bolivia.
+            body: `Buenas.
+Gracias por comunicarte con Distribuidora Finfitt Weight Loss Bolivia.
 Le ruego lea detenidamente la información del producto:`
             }
     },
