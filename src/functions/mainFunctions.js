@@ -27,16 +27,16 @@ export const sendWelcomeMessage =  async (from,to,token)=>{
                     }*/
                 },
                 body:{
-                    text:"De dónde nos contacta?"
+                    text:"De qué departamento nos contacta?"
                     },
                 footer:{
-                        text:"Por favor presiona el botón 'Selecciona la ciudad'."
+                        text:"Por favor presione el botón 'Seleccione el departamento'."
                     },
                 action:{
-                        button:"Selecciona la ciudad",
+                        button:"Seleccione el departamento",
                         sections:[
                             {
-                                title:"Ciudades",
+                                title:"Departamentos",
                                 rows:[{
                                     id:"LPZ",
                                     title:"La Paz"
@@ -59,7 +59,7 @@ export const sendWelcomeMessage =  async (from,to,token)=>{
                                 },
                                 {
                                     id:"PO",
-                                    title:"Potosi"
+                                    title:"Potosí"
                                 },
                                 {
                                     id:"OR",
@@ -210,7 +210,7 @@ export const sendGreetingMsg = async (from,to,token)=>{
             preview_url: false,
             body: `Buenas.
 Gracias por comunicarte con Distribuidora Finfitt Weight Loss Bolivia.
-Le ruego lea detenidamente la información del producto:`
+Le ruego *lea detenidamente la información* del producto:`
             }
     },
     headers:{
