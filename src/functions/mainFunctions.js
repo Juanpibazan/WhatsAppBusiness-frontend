@@ -5,6 +5,7 @@ import { lpzMsgs } from "../templateMsgs/cityMsgs";
 
 export const sendWelcomeMessage =  async (from,to,token)=>{
     //await sendFirstMessage(from,to,token)
+    try{
     const response = await axios({
         method:"post",
         url: `https://graph.facebook.com/v16.0/${from}/messages?access_token=${token}`,
@@ -33,7 +34,7 @@ export const sendWelcomeMessage =  async (from,to,token)=>{
                         text:"Por favor presione el botón 'Seleccione el departamento'."
                     },
                 action:{
-                        button:"Seleccione el departamento",
+                        button:"Seleccione el depto",
                         sections:[
                             {
                                 title:"Departamentos",
@@ -94,7 +95,11 @@ export const sendWelcomeMessage =  async (from,to,token)=>{
         if (response.status===200){
             alert('Mensaje enviado correctamente');
         }
-}
+    }
+    catch(err){
+        console.log(err);
+    }
+};
 
 const sendImage = async (from,to,token)=>{
     await axios({
