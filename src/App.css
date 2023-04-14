@@ -183,6 +183,19 @@ h1, h2, label{
   border: 2px solid rgb(62, 100, 250);
 }
 
+.calendly-container{
+  text-align: center;
+}
+
+.calendly-container > button{
+  background-color: #3e64fa;
+  color: #fff;
+  padding: 10px 15px;
+  border: 2px solid #fff;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
 @media screen and (max-width: 600px){
   .navlist-container{
     text-align: right;
