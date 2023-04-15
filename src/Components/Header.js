@@ -16,18 +16,19 @@ const Header = ()=>{
     return (
         <div>
             <nav className='nav-bar'>
-                <div className='logo-container'>
-                    <img width='100px' height='100px' style={{borderRadius:'50%'}} src={Logo} />
+                <div onClick={()=>window.location='/'} className='logo-container'>
+                    <img width='100px' height='100px' style={{borderRadius:'50%',cursor:'pointer'}} src={Logo} />
                 </div>
                 <div className='navlist-container'>
                     <div className='menu-container'>
                         <img width='40px' height='40px' src={menu} />
                     </div>
                     <ul className='nav-list'>
-                        <li><Link style={location.pathname==='/whatsapp-adm' ? {color:'#0315BB'} : (location.pathname==='/cityInstructions' ? {color:'#019d4d'} : {color:'#fff'})} to='/whatsapp-adm'>Inicio</Link></li>
+                        <li><Link style={location.pathname==='/whatsapp-adm' ? {color:'#0315BB'} : (location.pathname==='/cityInstructions' ? {color:'#019d4d'} : {color:'#fff'})} to='/'>Inicio</Link></li>
                         <li><Link style={location.pathname==='/whatsapp-adm' ? {color:'#0315BB'} : (location.pathname==='/cityInstructions' ? {color:'#019d4d'} : {color:'#fff'})} to='/'>Producto</Link></li>
                         <li><Link style={location.pathname==='/whatsapp-adm' ? {color:'#0315BB'} : (location.pathname==='/cityInstructions' ? {color:'#019d4d'} : {color:'#fff'})} to='/'>Nosotros</Link></li>
                         <li><Link style={location.pathname==='/whatsapp-adm' ? {color:'#0315BB'} : (location.pathname==='/cityInstructions' ? {color:'#019d4d'} : {color:'#fff'})} to='/'>Contacto</Link></li>
+                        <li><Link style={{backgroundColor:'#019d4d',border:'2px solid #000',padding:'10px 15px',borderRadius:'12px',boxShadow:'0px 3px 0px #000'}} to='/whatsapp-adm'>Modo Admin</Link></li>
                     </ul>
                 </div>
             </nav>
