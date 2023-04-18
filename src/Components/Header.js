@@ -5,9 +5,10 @@ import Logo from '../img/finfittLogo.jpg';
 import menu from '../img/blue-menu.png';
 
 import { useStateValue } from '../context/StateProvider';
+import { actionTypes } from '../context/reducer';
 
 const Header = ()=>{
-    const [{backImage}, dispatch] = useStateValue();
+    const [{backImage,user}, dispatch] = useStateValue();
     const location = useLocation();
     useEffect(()=>{
         
@@ -28,8 +29,15 @@ const Header = ()=>{
                         <li><Link style={location.pathname==='/whatsapp-adm' ? {color:'#0315BB'} : (location.pathname==='/cityInstructions' ? {color:'#019d4d'} : {color:'#fff'})} to='/'>Producto</Link></li>
                         <li><Link style={location.pathname==='/whatsapp-adm' ? {color:'#0315BB'} : (location.pathname==='/cityInstructions' ? {color:'#019d4d'} : {color:'#fff'})} to='/'>Nosotros</Link></li>
                         <li><Link style={location.pathname==='/whatsapp-adm' ? {color:'#0315BB'} : (location.pathname==='/cityInstructions' ? {color:'#019d4d'} : {color:'#fff'})} to='/'>Contacto</Link></li>
-                        <li><Link style={{backgroundColor:'#019d4d',border:'2px solid #000',padding:'10px 15px',borderRadius:'12px',boxShadow:'0px 3px 0px #000'}} to='/whatsapp-adm'>Modo Admin</Link></li>
+                        {user && (
+                            <div>
+                                <li><Link style={{backgroundColor:'#019d4d',border:'2px solid #000',padding:'10px 15px',borderRadius:'12px',boxShadow:'0px 3px 0px #000'}} to='/whatsapp-adm'>Modo Admin</Link></li>
+                                <li><Link style={{backgroundColor:'#3e64fa',border:'2px solid #000',padding:'10px 15px',borderRadius:'12px',boxShadow:'0px 3px 0px #000'}} to='/login'>Iniciar sesión</Link></li>
+                            </div>
+                            )}
+                        {!user && <li><Link style={{backgroundColor:'#3e64fa',border:'2px solid #000',padding:'10px 15px',borderRadius:'12px',boxShadow:'0px 3px 0px #000'}} to='/login'>Iniciar sesión</Link></li>}
                     </ul>
+
                 </div>
             </nav>
         </div>

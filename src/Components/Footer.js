@@ -7,7 +7,7 @@ const Footer = ()=>{
     return (
         <div style={{position:'absolute',bottom:0,right:0,left:0}}>
             <div style={{display:'flex',justifyContent:'center'}}>
-                <Link target="_blank" to='https://facebook.com/FinFittWeightLossBolivia'>
+                <Link target="_blank" to='https://facebook.com/Finfitt-Distribuidor-Autorizado-104706609124401'>
                     <img style={{width:'50px',height:'50px'}} src={fbLogo} />
                 </Link>
                 <Link target="_blank" to='https://www.instagram.com/fingrassbolivia'>
