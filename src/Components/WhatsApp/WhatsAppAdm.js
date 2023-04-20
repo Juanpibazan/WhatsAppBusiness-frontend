@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 import SendIcon from '../../img/send.png';
 import fondo from '../../img/fondo.jpg';
@@ -11,7 +11,8 @@ const WhatsAppAdm = ()=>{
     useEffect(()=>{
         console.log(location);
     },[])*/
-    const [{backImage}, dispatch] = useStateValue();
+    const [{backImage,user}, dispatch] = useStateValue();
+    const navigate = useNavigate();
     useEffect(()=>{
         dispatch(
             {
@@ -20,6 +21,9 @@ const WhatsAppAdm = ()=>{
             }
         );
         localStorage.setItem('backImage',JSON.stringify(fondo));
+        if(user===null){
+            return navigate('/login');
+        }
     },[]);
 
     const changeWelcomeMsgBackImage = ()=>{
@@ -27,7 +31,7 @@ const WhatsAppAdm = ()=>{
             type: actionTypes.SET_BACK_IMAGE,
             backImage: fondo
         });
-        window.location = '/welcomeMsg';
+        return navigate ('/welcomeMsg');
     }
     return (
         <div className='WhatsAppAdm'>
@@ -44,7 +48,7 @@ const WhatsAppAdm = ()=>{
                         </div>
                     </div>
                 </div>
-                <div className='operation-container' onClick={()=>{window.location = '/cityInstructions'}}>
+                <div className='operation-container' onClick={()=> navigate('/cityInstructions')}>
                     <div className='operation-subcontainer'>
                         <div>
                             <img width='50px' height='50px' src={SendIcon} />

@@ -1,5 +1,6 @@
 import React, {useState,useEffect} from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 import { useStateValue } from '../context/StateProvider';
 
@@ -8,9 +9,29 @@ const SignUp = ()=>{
     const [email,setEmail] = useState('');
     const [password,setPassword] = useState('');
     const [fullName, setFullName] = useState('');
+    const navigate = useNavigate();
 
     const register = async (fullName,email,password)=>{
-        console.log('hi');
+        const response = await axios({
+            method:'post',
+            url:'https://finfitt-test.azurewebsites.net/db/users',
+            data:{
+                fullName,
+                email,
+                password
+            },
+            headers:{
+                "Content-Type":"application/json",
+                "Access-Control-Allow-Origin": "*",
+                "Access-Control-Allow-Methods": 'HEAD, GET, POST, PUT, PATCH, DELETE',
+                "Access-Control-Allow-Headers": 'Origin, Content-Type, X-Auth-Token'
+            }
+        });
+        console.log(response);
+        if(response.status===200){
+            alert('Usuario registrado');
+            return navigate('/whatsapp-adm');
+        }
     };
 
     return (
@@ -29,7 +50,7 @@ const SignUp = ()=>{
                 <br/>
                 <input type='password' value={password} onChange={(e)=>setPassword(e.target.value)} />
                 <br/>
-                <button>Registrarse</button>
+                <button onClick={()=>register(fullName,email,password)}>Registrarse</button>
             </div>
         </div>
 

@@ -5,10 +5,12 @@ import {Link, useLocation} from 'react-router-dom';
 import {departments} from '../../templateMsgs/cities';
 import { sendDeptFirstMsg } from '../../functions/mainFunctions';
 import { lpzMsgs, sczMsgs, cbbaMsgs, otherMsgs } from '../../templateMsgs/cityMsgs';
+import { useStateValue } from '../../context/StateProvider';
 
 const CityInstructions = ()=>{
     const [selectedDept, setSelectedDept]= useState('');
     const [toNumber, setToNUmber]= useState('');
+    const [{user}, dispatch] = useStateValue();
     const fromNumber = "105607215755407";
     const token = 'EAAU4PYUSKJ8BAM76fpOxP3vuk4X5MnmAlK7ukRUJQG8cXezNuQZA9FjEXKLbKyZAtQG2m5flzaQy40BFgzZBh1DJfH5X3ikGQgnOXgsVuulR6n5VC6h7ppdvMcxaAWU5Oo1wmtAoWdRvEOslmt5l61FmU1YIhw3DeGqBzRynXOD2ZBSszhEzTPFZASHYWMvYVZBF7hVXIG5gZDZD';
 

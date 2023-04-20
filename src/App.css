@@ -105,8 +105,16 @@ padding-right: 2%;
   padding: 0;
 }
 
-.nav-list > li{
+.nav-list > li, li{
   list-style: none;
+}
+
+a{
+  text-decoration: none;
+}
+
+button{
+  cursor: pointer;
 }
 
 .nav-list > li > a{
@@ -181,6 +189,14 @@ h1, h2{
   background-color: #fff;
   color: rgb(62, 100, 250);
   border: 2px solid rgb(62, 100, 250);
+}
+
+.login-btn{
+  padding: 10px 15px;
+  background-color: #019d4d;
+  border: 1px solid #000;
+  border-radius: 12px;
+  color: #fff;
 }
 
 .calendly-container{
