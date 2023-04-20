@@ -6,7 +6,7 @@ const Home = ()=>{
     return (
         <div>
             <div className='calendly-container'>
-                <PopupButton url='https://calendly.com/coding_is_giving'
+                <PopupButton url='https://calendly.com/finfitt-distribuidor-autorizado'
                 rootElement={document.getElementById('root')}
                 text='Desea Agendarse?'
                 />
