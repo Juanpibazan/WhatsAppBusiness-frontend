@@ -24,7 +24,6 @@ const Header = ()=>{
         localStorage.removeItem('user');
         alert('Log Out exitoso');
         return navigate('/login');
-        window.location('http://localhost:3000/');
     };
     return (
         <div>
