@@ -12,8 +12,8 @@ import fondo from '../../img/flyer-finfitt.png';
 const WelcomeMessage = ()=>{
     const [toNumber, setToNumber] = useState("");
     const [{backImage}, dispatch] = useStateValue();
-    const fromNumber = "105607215755407";
-    const token = 'EAAU4PYUSKJ8BAGb8MpZCGwMUfpBCQyIfwVjt2mg9ufbYF4dgZC4ZCRKHlpRy6NzmPVZARFwPV8H0koqWUE1yFVdGjWen354EpB6FpI1OFzq6kjSJ4V7ZBCNRPBJNUPz9mfLYaCBbCWuGoF9lmcSErNPLxcepG7JSvZBsD7ZB14bMdqW3OECf7VE828q82pH0HZABSfPsTS5wfgZDZD';
+    const fromNumber = "104335012654762";
+    const token = 'EAAI8wS4HjcIBAOXUgP06VJxZC4SZBbPzedBBTPBWV4BI0JZBo8DbBQYfzVTxW7mDJBCyq4J30NS923q6YzYiKekPo7jspiIewU78y4LZBqoJ7liU1XVBkUCHAktEsZACo9XPZCsEUkcB1Yoyu4ILAaCHxaXsbubPH9GcVYBZAEWWi0W1A1noPa4V7AOxbd7IFtBjNJEELTNwQZDZD';
 
     useEffect(()=>{
         dispatch({
@@ -28,7 +28,7 @@ const WelcomeMessage = ()=>{
         <div>
             <h2>Mensajes de bienvenida para cada cliente</h2>
             <div>
-                <label>Ingresa el numero de WhatsApp por favor:</label>
+                <label style={{color:'#fff'}}>Ingresa el numero de WhatsApp por favor:</label>
                 <br/><br/>
                 <input type='text' placeholder='Escriba numero aca' value={toNumber} onChange={(e)=>{return setToNumber(e.target.value)}} />
                 <br/><br/>

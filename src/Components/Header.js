@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 import Logo from '../img/finfittLogo.jpg';
-import menu from '../img/blue-menu.png';
+import menu from '../img/white-burger-menu.png';
 
 import { useStateValue } from '../context/StateProvider';
 import { actionTypes } from '../context/reducer';
@@ -33,6 +33,7 @@ const Header = ()=>{
                 </div>
                 <div className='navlist-container'>
                     <div className='menu-container'>
+                        <p style={{color:'#fff',fontWeight:'bolder'}}>Menu</p>
                         <img width='40px' height='40px' src={menu} />
                     </div>
                     <ul className='nav-list'>

@@ -1,8 +1,28 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { PopupButton } from 'react-calendly';
+import axios from 'axios';
 
 
 const Home = ()=>{
+
+    /*const startSSE = async ()=>{
+        const {data} = await axios({
+            method:'get',
+            url:'https://finfitt-test.azurewebsites.net/db/sse'
+        });
+        return data;
+    };*/
+    const eventSource = new EventSource('https://finfitt-test.azurewebsites.net/db/sse');
+    eventSource.addEventListener('message', (e)=>{
+        try{
+            console.log(e.data);
+        }
+        catch(err){
+            console.log(err);
+        }
+    });
+
+
     return (
         <div>
             <div className='calendly-container'>
@@ -10,6 +30,9 @@ const Home = ()=>{
                 rootElement={document.getElementById('root')}
                 text='Desea Agendarse?'
                 />
+            </div>
+            <div>
+                <p></p>
             </div>
 
         </div>
