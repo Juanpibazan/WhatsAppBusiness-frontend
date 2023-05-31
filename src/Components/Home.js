@@ -1,6 +1,8 @@
 import React, {useState} from 'react';
 import { PopupButton } from 'react-calendly';
 import axios from 'axios';
+//import eventsource from 'eventsource';
+//import EventSource from 'eventsource';
 
 
 const Home = ()=>{
@@ -8,11 +10,20 @@ const Home = ()=>{
     /*const startSSE = async ()=>{
         const {data} = await axios({
             method:'get',
-            url:'https://finfitt-test.azurewebsites.net/db/sse'
+            url:'https://finfitt-test.azurewebsites.net/db/sse',
+            headers:{
+                "Content-Type":"application/json",
+                "Access-Control-Allow-Origin":"*"
+            }
         });
         return data;
     };*/
-    const eventSource = new EventSource('https://finfitt-test.azurewebsites.net/db/sse');
+
+    const eventSourceInitDict = {headers: {"Access-Control-Allow-Origin":"*"}}; 
+    //const eventSource = new EventSource('https://finfitt-test.azurewebsites.net/db/sse',eventSourceInitDict);
+
+    const eventSource = new EventSource('https://finfitt-test.azurewebsites.net/db/sse',{withCredentials:true});
+    console.log(eventSource.withCredentials);
     eventSource.addEventListener('message', (e)=>{
         try{
             console.log(e.data);
@@ -32,7 +43,6 @@ const Home = ()=>{
                 />
             </div>
             <div>
-                <p></p>
             </div>
 
         </div>
