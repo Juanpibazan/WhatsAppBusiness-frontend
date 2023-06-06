@@ -19,10 +19,10 @@ const Home = ()=>{
         return data;
     };*/
 
-    const eventSourceInitDict = {headers: {"Access-Control-Allow-Origin":"*"}}; 
+    //const eventSourceInitDict = {headers: {"Access-Control-Allow-Origin":"*"}}; 
     //const eventSource = new EventSource('https://finfitt-test.azurewebsites.net/db/sse',eventSourceInitDict);
 
-    const eventSource = new EventSource('https://finfitt-test.azurewebsites.net/db/sse',{withCredentials:true});
+    /*const eventSource = new EventSource('https://finfitt-test.azurewebsites.net/db/sse',{withCredentials:true});
     console.log(eventSource.withCredentials);
     eventSource.addEventListener('message', (e)=>{
         try{
@@ -31,7 +31,7 @@ const Home = ()=>{
         catch(err){
             console.log(err);
         }
-    });
+    });*/
 
 
     return (

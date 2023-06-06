@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {Routes, Route, useLocation} from 'react-router-dom';
+import io from 'socket.io-client';
 
 import logo from './logo.svg';
 import fondo from './img/fondo.jpg';
@@ -17,6 +18,13 @@ import Home from './Components/Home';
 import Footer from './Components/Footer';
 import Login from './Components/Login.js';
 import SignUp from './Components/SignUp';
+import Chat from './Components/WhatsApp/Chat';
+
+export const socket = io("wss://finfitt-test.azurewebsites.net",{
+  transports: ['websocket'],
+  rejectUnauthorized: false,
+  closeOnBeforeunload: false
+});
 
 function App() {
   const [image, setImage] = useState();
@@ -31,7 +39,11 @@ function App() {
     console.log(backImage);
   },[image]);
 
-  
+
+  socket.on("connect_error", (err)=>{
+    console.log(`connect_error due to ${err.message}`);
+  })
+
 
 
   return (
@@ -45,6 +57,7 @@ function App() {
         <Route path='/cityInstructions' element={<CityInstructions />} />
         <Route path='/login' element={<Login/>} />
         <Route path='/signup' element={<SignUp/>} />
+        <Route path='/chat' element={<Chat />} />
       </Routes>
       <Footer />
     </div>
