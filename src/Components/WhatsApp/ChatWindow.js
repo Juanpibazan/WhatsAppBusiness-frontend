@@ -12,7 +12,7 @@ const ChatWindow = ()=>{
 
     useEffect(()=>{
         socket.on('server:render-chats',(data)=>{
-            console.log('Both types of chats',data.sentChats);
+            console.log('Both types of chats',data);
             const filteredReceivedData = data.receivedChats.filter(item => item.from_id === chatToDisplay);
             const filteredSentData = data.sentChats.filter(item => item.to_id === chatToDisplay);
             console.log('filteredReceivedData',filteredReceivedData);
