@@ -44,7 +44,7 @@ const Chat = ()=>{
             </div>
             <div style={{width:'70%'}}>
                 Chat window
-                        <div>
+                        <div >
                             <ChatWindow />
                         </div>
             </div>

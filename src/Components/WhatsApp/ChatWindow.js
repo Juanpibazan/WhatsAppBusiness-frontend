@@ -6,16 +6,19 @@ import { useStateValue } from '../../context/StateProvider';
 
 const ChatWindow = ()=>{
 
-    const [chats, setChats] = useState([]);
+    const [receivedChats, setReceivedChats] = useState([]);
+    const [sentChats, setSentChats] = useState([]);
     const [{chatToDisplay},dispatch] = useStateValue();
 
     useEffect(()=>{
         socket.on('server:render-chats',(data)=>{
-            console.log(data);
-            const filteredData = data.filter(item => item.from_id === chatToDisplay);
-            console.log('fileteredData',filteredData);
+            console.log('Both types of chats',data.sentChats);
+            const filteredReceivedData = data.receivedChats.filter(item => item.from_id === chatToDisplay);
+            const filteredSentData = data.sentChats.filter(item => item.to_id === chatToDisplay);
+            console.log('filteredReceivedData',filteredReceivedData);
             console.log('chatToDisplay',chatToDisplay);
-            setChats(filteredData);
+            setReceivedChats(filteredReceivedData);
+            setSentChats(filteredSentData);
         });
     })
 
@@ -26,20 +29,32 @@ const ChatWindow = ()=>{
             <div>
                 <h4>{chatToDisplay}</h4>
             </div>
-            <div>
-                {chats.map((chat)=>{
-                    return (
-                        <div key={chat.pk} style={{marginBottom:'20px'}}>
-                            <p style={{fontSize:'10px',margin:'0'}}>{chat.date_time}</p>
-                            <p style={{margin:'0'}}>{chat.msg_body}</p>
-                        </div>
+            <div style={{display:'flex',justifyContent:'space-between'}}>
+                <div>
+                    {receivedChats.map((chat)=>{
+                        return (
+                            <div key={chat.pk} style={{marginBottom:'20px'}}>
+                                <p style={{fontSize:'10px',margin:'0'}}>{chat.date_time}</p>
+                                <p style={{margin:'0'}}>{chat.msg_body}</p>
+                            </div>
 
-                    )
-                })
-                    
-                }
-                <p></p>
+                        )
+                    })
+                        
+                    }
+                </div>
+                <div>
+                    {sentChats.map((chat)=>{
+                        return (
+                            <div key={chat.pk} style={{marginBottom:'20px'}}>
+                                <p style={{fontSize:'10px',margin:'0'}}>{chat.date_time}</p>
+                                <p style={{margin:'0'}}>{chat.msg_body}</p>
+                            </div>
+                        )
+                    })}
+                </div>
             </div>
+
         </div>
     )
 };
