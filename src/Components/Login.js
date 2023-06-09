@@ -33,7 +33,7 @@ const Login = ()=>{
                 type: actionTypes.SET_USER,
                 user: response.data.email
             });
-            localStorage.setItem('user',response.data.email);
+            localStorage.setItem('user',JSON.stringify(response.data.email));
             alert('Bienvenid@');
             return navigate('/whatsapp-adm');
         }

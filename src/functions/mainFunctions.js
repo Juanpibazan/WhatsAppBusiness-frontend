@@ -230,3 +230,24 @@ Le ruego *lea detenidamente la información* del producto:`
     alert('Mensaje enviado correctamente!');
  }
 };
+
+export const sendSingleMsg = async (from,to,token,msg_body)=>{
+    const response = await axios({
+        method:'post',
+        url:`https://graph.facebook.com/v16.0/${from}/messages?`,
+        data:{
+            messaging_product: "whatsapp",
+                to: to,
+                type: "text",
+                text: {
+                preview_url: false,
+                body: msg_body
+                }
+        },
+        headers:{
+            "Content-Type": "application/json"
+            ,"Authorization": `Bearer ${token}`
+        }
+    });
+    return response;
+};

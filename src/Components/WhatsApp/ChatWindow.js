@@ -2,6 +2,7 @@ import React, {useState,useEffect} from 'react';
 import io from 'socket.io-client';
 import { socket } from '../../App';
 import { useStateValue } from '../../context/StateProvider';
+import { sendSingleMsg } from '../../functions/mainFunctions';
 
 
 const ChatWindow = ()=>{
@@ -9,6 +10,11 @@ const ChatWindow = ()=>{
     const [receivedChats, setReceivedChats] = useState([]);
     const [sentChats, setSentChats] = useState([]);
     const [{chatToDisplay},dispatch] = useStateValue();
+    const [msg, setMsg] = useState('');
+
+    const phone_number_id = '104335012654762';
+    const to_id = chatToDisplay;
+    const token = 'EAAI8wS4HjcIBAE2cJJ4EvCGsUM53OAmqn9vnNEC6MhGjjsNusm5AMqCNdlG2ddeMuwdGOkNRfgDacGnIT0fBZB14oUeNiV1XlBKKwF4ZB55eRsUjA5ZAbGZAQ3ZBJ4ZAcwc29hAVMh86pQoAZA6oBKT6iVbAncfxJrlZChcfypNF6JvzzSmPCZAjZC1BCZCNuYuYzkPEpIISsbiDQZDZD';
 
     useEffect(()=>{
         socket.on('server:render-chats',(data)=>{
@@ -20,7 +26,17 @@ const ChatWindow = ()=>{
             setReceivedChats(filteredReceivedData);
             setSentChats(filteredSentData);
         });
-    })
+    });
+
+    const sendMsg = async (from,to,token,msg_body)=>{
+        const response = await sendSingleMsg(from,to,token,msg_body);
+        if (response.status===200){
+            alert('Mensaje enviado');
+            const id = response.data.messages[0].id;
+            const dataToBeSent = {id,from,to,token,msg_body};
+            socket.emit('client:singleMsg-sent',dataToBeSent);
+        }
+    }
 
 
 
@@ -29,7 +45,7 @@ const ChatWindow = ()=>{
             <div>
                 <h4>{chatToDisplay}</h4>
             </div>
-            <div style={{display:'flex',justifyContent:'space-between'}}>
+            <div style={{display:'flex',justifyContent:'space-between',overflow:'scroll'}}>
                 <div>
                     {receivedChats.map((chat)=>{
                         return (
@@ -54,7 +70,12 @@ const ChatWindow = ()=>{
                     })}
                 </div>
             </div>
-
+            <div style={{display:'flex',justifyContent:'right'}}>
+                <div style={{display:'flex',justifyContent:'space-around'}}>
+                    <textarea value={msg} onChange={(e)=>setMsg(e.target.value)} />
+                    <button onClick={()=> sendMsg(phone_number_id,to_id,token,msg)}>Send</button>
+                </div>
+            </div>
         </div>
     )
 };
