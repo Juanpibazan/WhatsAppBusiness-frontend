@@ -14,7 +14,7 @@ const ChatWindow = ()=>{
 
     const phone_number_id = '104335012654762';
     const to_id = chatToDisplay;
-    const token = 'EAAI8wS4HjcIBAKM29FIhRjZBt9GNDsvpDtZAqPRbL5irq5xKqjUj9D9o4XpUXLxGRJDo7I1wQc42fgQMUZCo2uEyvuUZBw9VcB5FSpE9ZBtEbZCYqSSZBfKWNjRkzhlF7hJeKl3GusEt9EkI9kGfCnvgJMgnMiVO2D5V6qCqNmjMAZDZD';
+    const token = 'EAAI8wS4HjcIBAPjJ0twYfsW0JTlPwgI0KUv22CbxdiueDVVfGi7dXgWR80Iu5QZBZBQ8KZBJrJ88vrJD2tTAbwdZBZAriVOlcgtEKaGkBKXMppK78Ys29xVAs9QRp6ZBtuljgoulEgOZBjfkSQvkMl5quZBDkQPlipSUqAsEWWZAFRgZDZD';
 
     useEffect(()=>{
         socket.on('server:render-chats',(data)=>{
