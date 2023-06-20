@@ -3,6 +3,8 @@ import { PopupButton } from 'react-calendly';
 import axios from 'axios';
 //import eventsource from 'eventsource';
 //import EventSource from 'eventsource';
+import Testimonials from '../HomeSegments/Testimonials';
+import Images from '../HomeSegments/Images';
 
 
 const Home = ()=>{
@@ -42,7 +44,10 @@ const Home = ()=>{
                 text='Desea Agendarse?'
                 />
             </div>
-            <div>
+            <div >
+                <Images />
+                <Testimonials />
+
             </div>
 
         </div>

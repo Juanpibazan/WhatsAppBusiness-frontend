@@ -48,7 +48,7 @@ function App() {
 
   return (
     //<div className="App" style={location.pathname==='/whatsapp-adm' ? {backgroundImage:`url(${fondo})`,backgroundRepeat:'no-repeat',backgroundSize:'cover'} : (location.pathname==='/welcomeMsg' ? {backgroundImage:`url(${fondo2})`,backgroundRepeat:'no-repeat',backgroundSize:'cover'} : (location.pathname==='/' ? {backgroundImage:`url(${fondo4})`,backgroundRepeat:'no-repeat',backgroundSize:'cover'} : {backgroundImage:`url(${fondo3})`,backgroundRepeat:'no-repeat',backgroundSize:'cover'}))}>
-    <div className="App" style={{backgroundImage:`url(${fondoOficial})`,backgroundRepeat:'no-repeat',backgroundSize:'cover'}}>
+    <div className="App" style={{backgroundImage:`url(${fondoOficial})`,backgroundRepeat:'no-repeat',backgroundSize:'cover',backgroundPosition:'center'}}>
       <Header />
       <Routes>
         <Route path='/' element={<Home/>} />
