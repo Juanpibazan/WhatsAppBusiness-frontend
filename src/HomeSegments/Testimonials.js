@@ -7,7 +7,7 @@ const Testimonials = ()=>{
             <h1 style={{textAlign:'center'}}>Testimonios</h1>
             <div className='testimonials-container'>
             <div style={{display:'flex',justifyContent:'space-around'}}>
-                <div style={{display:'flex',alignItems:'center',verticalAlign:'middle',lineHeight:'100%'}}>
+                <div className='name-avatar-container' >
                     <h3>Testimonio 1</h3>
                     <div>
                         <RxAvatar style={{display:'flex',width:'100px',height:'100px',margin:0}}/>
@@ -18,8 +18,8 @@ const Testimonials = ()=>{
 Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                     </div>
             </div>
-            <div style={{display:'flex',justifyContent:'space-between'}}>
-                <div style={{display:'flex',alignItems:'center',verticalAlign:'middle',lineHeight:'100%'}} >
+            <div style={{display:'flex',justifyContent:'space-around'}}>
+                <div className='name-avatar-container' >
                     <h3>Testimonio 2</h3>
                     <div>
                         <RxAvatar style={{display:'flex',width:'100px',height:'100px'}}/>
@@ -31,7 +31,7 @@ Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deseru
                     </div>
             </div>
             <div style={{display:'flex',justifyContent:'space-around'}}>
-                <div style={{display:'flex',alignItems:'center',verticalAlign:'middle',lineHeight:'100%'}}>
+                <div className='name-avatar-container' >
                     <h3>Testimonio 3</h3>
                     <div>
                         <RxAvatar style={{display:'flex',width:'100px',height:'100px'}}/>
