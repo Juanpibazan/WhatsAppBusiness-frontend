@@ -6,11 +6,13 @@
 
 html { 
   height: 100%;
+  width: 100%;
 }
 
 
 body {
   height: 100%;
+  width: 100%;
   margin: 0;
   font-family: rabelo;
   /*font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -217,7 +219,7 @@ h1, h2{
 }
 
 #testimonials{
-  width:100%;
+  width:100vw;
   height:100vh;
   position:relative;
 
@@ -228,7 +230,7 @@ h1, h2{
 }
 
 #images{
-  width:100%;
+  width:100vw;
   height:100vh;
   position:relative;
   margin: auto;
@@ -285,6 +287,31 @@ h1, h2{
 
   .btns-container > a, .btns-container > button{
     margin-bottom: 10%;
+  }
+
+  #testimonials{
+    width:100vw;
+    height:100vh;
+    position:relative;
+  
+  }
+  .testimonials-container{
+    display: block;
+    justify-content: center;
+  }
+  
+  #images{
+    width:100vw;
+    height:100vh;
+    position:relative;
+    margin: auto;
+  }
+  
+  .images-container{
+    display: grid;
+    grid-template-columns: repeat(2,40%);
+    justify-content: center;
+    gap: 10%;
   }
 
 }
