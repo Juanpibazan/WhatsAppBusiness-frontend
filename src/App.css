@@ -44,7 +44,7 @@ background-size: cover;*/
 padding-left: 2%;
 padding-right: 2%;
 width: 100%;
-height: 100%;
+height: 150%;
 }
 
 /*.WhatsAppAdm{
@@ -226,7 +226,8 @@ h1, h2{
 }
 .testimonials-container{
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  position: relative;
 }
 
 #images{
@@ -234,13 +235,85 @@ h1, h2{
   height:100vh;
   position:relative;
   margin: auto;
+  text-align: center;
 }
-
+/*
 .images-container{
   display: grid;
   grid-template-columns: repeat(3,20%);
   justify-content: center;
   gap: 10%;
+}
+*/
+.images-container{
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.slide{
+  border-radius: 0.5rem;
+  box-shadow: 0px 0px 7px gray;
+  width: 600px;
+  height: 400px;
+}
+
+.slide img{
+  border-radius: 0.5rem;
+}
+
+.slide-hidden{
+  display: none;
+}
+
+.arrow{
+  position: absolute;
+  color: #fff;
+  width: 2rem;
+  height: 2rem;
+  top: 40%;
+  filter: drop-shadow(0px 0px 4px gray);
+}
+
+.arrow:hover{
+  cursor: pointer;
+}
+
+.arrow-left{
+  left: 5rem;
+}
+
+.arrow-right{
+  right: 5rem;
+}
+
+.indicators{
+  margin-top: 1rem;
+  height: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.indicator{
+  height: 0.5rem;
+  margin: 0rem 0.2rem;
+  border-radius: 100%;
+  border: none;
+  box-shadow: 0px 0px 5px gray;
+  background-color: #fff;
+}
+
+.indicator-inactive{
+  background-color: rgb(78, 76, 76);
+}
+
+.testimonial{
+  display: flex;
+  justify-content: space-around;
+}
+
+.testimonial-hidden{
+  display: none;
 }
 
 .name-avatar-container{
@@ -250,8 +323,20 @@ h1, h2{
   line-height:100%;
 }
 
+#product{
+  text-align: center;
+}
+
+#product p{
+  text-align: justify;
+  color: #fff;
+}
 
 @media screen and (max-width: 600px){
+  .App{
+    padding: 2% 2%;
+  }
+
   .nav-bar{
     display: block;
   }
@@ -301,7 +386,7 @@ h1, h2{
     width:100vw;
     height:100vh;
     position:relative;
-  
+    margin-top: 200px;
   }
   .testimonials-container{
     display: block;
@@ -313,18 +398,24 @@ h1, h2{
     height:100vh;
     position:relative;
     margin: auto;
+    text-align: center;
   }
   
-  .images-container{
-    display: grid;
-    grid-template-columns: repeat(2,40%);
-    justify-content: center;
-    gap: 10%;
+  .slide{
+    border-radius: 0.5rem;
+    box-shadow: 0px 0px 7px gray;
+    width: 400px;
+    height: 300px;
   }
+
 
   .name-avatar-container{
     display:block;
     align-items:center;
+  }
+
+  #product p{
+    padding: 2% 2%;
   }
 
 }
