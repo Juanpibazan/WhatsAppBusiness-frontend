@@ -280,11 +280,11 @@ h1, h2{
 }
 
 .arrow-left{
-  left: 5rem;
+  left: 1rem;
 }
 
 .arrow-right{
-  right: 5rem;
+  right: 1rem;
 }
 
 .indicators{
@@ -310,6 +310,7 @@ h1, h2{
 .testimonial{
   display: flex;
   justify-content: space-around;
+  background-color: #7b7b7b;
 }
 
 .testimonial-hidden{
