@@ -1,5 +1,5 @@
 import React, {useState,useEffect} from 'react';
-import ProductImg from '../img/sibutramina.jpg';
+import ProductImg from '../img/fingrass.jpg';
 
 
 const Product = ()=>{
@@ -7,7 +7,7 @@ const Product = ()=>{
         <div id='product'>
             <h1>Fingrass</h1>
             <h2>Sibutramina de 4ta generación de 15 mg</h2>
-            <div>
+            <div className='product-image-container'>
                 <img src={ProductImg} />
             </div>
             <p>Es un medicamento usado para tratar el sobrepeso y obesidad. Aumenta la sensación de saciedad rápidamente, evitando que se ingieran alimentos en exceso y facilitando así la pérdida de peso. Así mismo aumenta la termogénesis, contribuyendo para la pérdida de peso y volumen. 
