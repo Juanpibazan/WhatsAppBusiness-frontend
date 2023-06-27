@@ -17,6 +17,12 @@ const Images = ({images})=>{
         slide===0 ? setSlide(images.length-1) : setSlide(slide-1);
     }
 
+    useEffect(()=>{
+        setTimeout(()=>{
+            nextSlide()
+        },5000)
+    });
+
     return (
         <div id='images'>
             <h1 style={{textAlign:'center',marginBottom:'50px'}}>Metas reales...cuerpos reales</h1>

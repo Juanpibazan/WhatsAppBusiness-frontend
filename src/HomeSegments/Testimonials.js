@@ -13,6 +13,12 @@ const Testimonials = ({testimonios})=>{
         current===0 ? setCurrent(testimonios.length-1) : setCurrent(current-1);
     }
 
+    useEffect(()=>{
+        setTimeout(()=>{
+            nextSlide()
+        },5000)
+    });
+
     return (
         <div id='testimonials'>
             <h1 style={{textAlign:'center'}}>Testimonios</h1>
