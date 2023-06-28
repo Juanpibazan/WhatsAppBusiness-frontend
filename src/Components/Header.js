@@ -47,7 +47,7 @@ const Header = ()=>{
                                 <li><Link style={{backgroundColor:'#3e64fa',border:'2px solid #000',padding:'10px 15px',borderRadius:'12px',boxShadow:'0px 3px 0px #000'}} onClick={()=>logOut()}>Log Out</Link></li>
                             </div>
                             )}
-                        {!user && <li><Link style={{backgroundColor:'#3e64fa',border:'2px solid #000',padding:'10px 15px',borderRadius:'12px',boxShadow:'0px 3px 0px #000'}} to='/login'>Iniciar sesión</Link></li>}
+                        {!user && <li><Link className='login-btn' style={{backgroundColor:'#3e64fa',border:'2px solid #000',padding:'5px 10px',borderRadius:'12px',boxShadow:'0px 3px 0px #000',width:'100%'}} to='/login'>Iniciar sesión</Link></li>}
                     </ul>
 
                 </div>
