@@ -282,11 +282,11 @@ h1, h2{
 }
 
 .arrow-left{
-  left: 1rem;
+  left: 0.2rem;
 }
 
 .arrow-right{
-  right: 1rem;
+  right: 0.2rem;
 }
 
 .indicators{
@@ -317,6 +317,8 @@ h1, h2{
   box-shadow: 0px 0px 7px #7b7b7b;
   border-radius: 1rem;
   pointer-events: visible;
+  width: 50%;
+  height: 300px;
   /*transform: scale(1);
   transition: 0.5s ease-in-out;*/
 }
@@ -342,6 +344,13 @@ h1, h2{
   color: #fff;
 }
 
+#order{
+  margin-top: 3rem;
+  margin-bottom: 5rem;
+  width: 100vw;
+  height: 100vh;
+}
+
 @media screen and (max-width: 600px){
   .App{
     padding: 2% 2%;
@@ -357,20 +366,35 @@ h1, h2{
   
   .navlist-container{
     right: 0;
-    width: 100%;
+    width: 30%;
     /*text-align: right;*/
     text-align: right;
   }
 
 
-
   .menu-container{
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: center;
     vertical-align: middle;
     line-height: 100%;
+    background-color: #3e64fa;
+    /*background-color: #2a2b2b;*/
+    width: 100%;
+    border-radius: 12px;
+    border: 1px solid #000;
+    box-shadow: 0px 0px 7px #000;
+    padding: 3px 5px;
   }
+
+  .menu-container p{
+    /*color: #81d355 !important;*/
+    color: #fff;
+    font-weight: bolder;
+    font-size: 20px;
+    
+  }
+
   .nav-list{
     display: none;
   }
@@ -413,6 +437,11 @@ h1, h2{
   .testimonials-container{
     display: block;
     justify-content: center;
+  }
+
+  .testimonial{
+    width: 100%;
+    height: 100%;
   }
   
   #images{
