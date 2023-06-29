@@ -42,7 +42,7 @@ const Login = ()=>{
     return (
         <div>
             <h2 style={{color:'#fff',marginTop:'50px'}}>Iniciar Sesión</h2>
-            <div>
+            <div className='login-container'>
                 <label style={{color:'#fff'}}>Email</label>
                 <br/>
                 <input type='email' value={email} onChange={(e)=>setEmail(e.target.value)} />
