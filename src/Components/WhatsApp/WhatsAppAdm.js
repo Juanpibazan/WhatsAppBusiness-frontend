@@ -37,6 +37,17 @@ const WhatsAppAdm = ()=>{
         <div className='WhatsAppAdm'>
             <h1>Administrador de mensajes de WhatsApp para FINFITT</h1>
             <div>
+                <div className='operation-container' onClick={()=>{return navigate('/order')}} >
+                        <div className='operation-subcontainer'>
+                            <div>
+                                <img width='50px' height='50px' src={SendIcon} />
+                            </div>
+                            <div className='operation-text-subcontainer'>
+                                <h3>Operacion 0</h3>
+                                <p>Guardar venta</p>
+                            </div>
+                        </div>
+                    </div>
                 <div className='operation-container' onClick={()=>{return changeWelcomeMsgBackImage()}} >
                     <div className='operation-subcontainer'>
                         <div>
