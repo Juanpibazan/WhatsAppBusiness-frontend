@@ -2,6 +2,9 @@ import React, {useState,useEffect} from 'react';
 import axios from 'axios';
 import dateAndTime from 'date-and-time';
 import { useNavigate } from 'react-router-dom';
+import {Chart} from 'react-chartjs-2';
+import {Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend,Filler} from 'chart.js/auto';
+ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend,Filler);
 
 const Stats = ()=>{
 
@@ -70,9 +73,48 @@ const Stats = ()=>{
 
     const getData= ()=>{
         getDataGroupedByCity();
+        //chart();
     }
 
     const currentDT = new Date();
+
+    //const canvas = document.getElementById('chart');
+    /*const chart = ()=> {
+        //const canvasContext = document.getElementById('chart').getContext('2d');
+
+            new Chart(document.getElementById('chart'),{
+                type: 'bar',
+                data:{
+                    labels:dataByCity.map(row=>row.Ciudad),
+                    datasets:[
+                        {
+                            label:'Ventas por Ciudad',
+                            data: dataByCity.map(row=>row.Cantidad_Vendida)
+                        }
+                    ]
+                }
+            });
+        };*/
+
+    const chartbyCityData = {
+        labels:dataByCity.map(row=>row.Ciudad),
+        datasets:[
+            {
+                label:'Ventas por Ciudad',
+                data: dataByCity.map(row=>row.Cantidad_Vendida)
+            }
+        ]
+    };
+
+    const chartbyClientData = {
+        labels:dataByClient.map(row=>row.Cliente),
+        datasets:[
+            {
+                label:'Ventas por Cliente',
+                data: dataByClient.map(row=>row.Cantidad_Vendida)
+            }
+        ]
+    };
 
     return (
         <div id='stats'>
@@ -90,6 +132,7 @@ const Stats = ()=>{
             <button className='generate-btn' onClick={level==='ciudad' ? getData : getDataGroupedByClient}>Generar informe</button>
             <div style={{marginTop:'1rem'}}>
             { level==='ciudad' && (
+                <div>
                 <table className='table-container'>
                 <th>Ciudad</th>
                 <th>Cantidad Vendida</th>
@@ -104,8 +147,11 @@ const Stats = ()=>{
                 })}
                 </tbody>
             </table>
+            <Chart className='chart' type='bar' data={chartbyCityData} />
+            </div>
             )}
             {level==='cliente' && (
+                <div>
                 <table className='table-container'>
                     <th>Ciudad</th>
                     <th>Cliente</th>
@@ -122,9 +168,12 @@ const Stats = ()=>{
                     })}
                     </tbody>
                 </table>
+                <Chart className='chart' type='bar' data={chartbyClientData} />
+                </div>
             )}
                 
             </div>
+            
         </div>
     )
 };

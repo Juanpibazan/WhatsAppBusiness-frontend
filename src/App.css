@@ -386,6 +386,10 @@ h1, h2{
   height: 100vh;
 }
 
+.chart{
+  height: 100%;
+}
+
 .generate-btn{
   background-color: #019d4d;
   padding: 10px 15px;
