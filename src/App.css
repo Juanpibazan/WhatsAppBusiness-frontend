@@ -140,7 +140,7 @@ h1, h2{
   width: 300px;
   border: 2px solid #019d4d;
   border-radius: 5%;
-  margin-bottom: 10px;
+  margin-bottom: 3rem;
   cursor: pointer;
   color: #fff;
   background-color: #019d4d;
@@ -149,11 +149,15 @@ h1, h2{
 
 .operation-subcontainer{
   display: flex;
-  justify-content: space-around;
-  padding: 0;
+  justify-content: space-between;
+  padding: 0 0.2rem;
   align-items: center;
   vertical-align: middle;
   line-height: 100%;
+}
+
+.operation-text-subcontainer{
+  width: 50%;
 }
 
 .send-btn{
@@ -354,6 +358,56 @@ h1, h2{
 
 #order label{
   color: #fff;
+}
+
+.order-btn{
+  background-color: #019d4d;
+  padding: 5px 10px;
+  border-radius: 12px;
+  border: 1px solid #000;
+  color: #fff;
+}
+
+.stats-btn{
+  width: 25px;
+  height:15px;
+  background-color: #4870e9;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 12px;
+  border: 1px solid #000;
+}
+
+#stats{
+  width: 100vw;
+  height: 100vh;
+}
+
+.generate-btn{
+  background-color: #019d4d;
+  padding: 10px 15px;
+  border-radius: 12px;
+  border: 1px solid #000;
+  color: #fff;
+}
+
+.back-btn{
+  width: 80px;
+  background-color: #4870e9;
+  color: #fff;
+  padding: 10px 15px;
+  border-radius: 12px;
+  border: 1px solid #000;
+}
+
+.table-container{
+  border: 1px solid #fff;
+  color: #fff;
+}
+
+.table-container td{
+  text-align: center;
+  border: 1px solid #fff;
 }
 
 @media screen and (max-width: 600px){

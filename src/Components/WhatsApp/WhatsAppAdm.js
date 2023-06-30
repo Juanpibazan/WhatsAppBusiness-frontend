@@ -48,7 +48,7 @@ const WhatsAppAdm = ()=>{
                             </div>
                         </div>
                     </div>
-                <div className='operation-container' onClick={()=>{return changeWelcomeMsgBackImage()}} >
+                {/*<div className='operation-container' onClick={()=>{return changeWelcomeMsgBackImage()}} >
                     <div className='operation-subcontainer'>
                         <div>
                             <img width='50px' height='50px' src={SendIcon} />
@@ -69,7 +69,7 @@ const WhatsAppAdm = ()=>{
                             <p>Enviar instrucciones por departamento</p>
                         </div>
                     </div>
-                </div>
+                </div>*/}
             </div>
         </div>
     )

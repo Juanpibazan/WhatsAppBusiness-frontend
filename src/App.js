@@ -20,6 +20,7 @@ import Login from './Components/Login.js';
 import SignUp from './Components/SignUp';
 import Chat from './Components/WhatsApp/Chat';
 import Order from './Components/Order';
+import Stats from './Components/Stats';
 
 export const socket = io("wss://finfitt-test.azurewebsites.net",{
   transports: ['websocket'],
@@ -60,6 +61,7 @@ function App() {
         <Route path='/signup' element={<SignUp/>} />
         <Route path='/chat' element={<Chat />} />
         <Route path='/order' element={ <Order /> }/>
+        <Route path='/stats' element={ <Stats /> }/>
       </Routes>
       <Footer />
     </div>
