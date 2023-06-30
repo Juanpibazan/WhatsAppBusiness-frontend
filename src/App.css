@@ -93,6 +93,9 @@ overflow: visible;
 }
 */
 
+.WhatsAppAdm{
+  height: 100vh;
+}
 
 .nav-bar{
   display: flex;
